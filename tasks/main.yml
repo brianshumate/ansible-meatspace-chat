@@ -10,7 +10,7 @@
 - name: Install OS packages
   sudo: True
   apt: "pkg={{ item }} state=installed"
-  with_items: "{{ meatspace-chat_os_packages }}"
+  with_items: meatspace-chat_os_packages
   tags:
     - system_packages
 
