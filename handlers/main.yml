@@ -1,12 +1,12 @@
 ---
 # handlers/main.yml Handlers for Meatspace Chat role
 
-- name: restart meatspace-chat
-  service: name=meatspace-chat state=restarted
+- name: restart meatspacechat
+  service: name=meatspacechat state=restarted
 
-- name: start meatspace-chat
-  service: name=meatspace-chat state=started
+- name: start meatspacechat
+  service: name=meatspacechat state=started
 
-- name: stop meatspace-chat
-  service: name=meatspace-chat state=stopped
+- name: stop meatspacechat
+  service: name=meatspacechat state=stopped
 

@@ -1,7 +1,7 @@
 # Ansible Meatspace Chat with Vagrant
 
 This is an [Ansible](http://www.ansible.com/) role for
-[Meatspace Chat](https://github.com/meatspaces/meatspace-chat), the fantastic
+[Meatspace Chat](https://github.com/meatspaces/meatspacechat), the fantastic
 web chat with animated .GIF goodness and so much more.
 
 ## Requirements
@@ -43,11 +43,11 @@ At a minimum, visit the variables defined in the following files:
 There is more information in the main project
 [README](README.md) about these variables.
 
-Then, copy `templates/meatspace-chat.env.j2` to `templates/_meatspace-chat.env.j2` and update as
+Then, copy `templates/meatspacechat.env.j2` to `templates/_meatspacechat.env.j2` and update as
 necessary with the particular environment variables you need for your Meatspace Chat.
 
 Finally, update the `site.yml` playbook if you plan to use it and set
-`meatspace-chat_identity` to the short username of your bot.
+`meatspacechat_identity` to the short username of your bot.
 
 ### Meatspace Chat Activate!
 

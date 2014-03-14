@@ -80,7 +80,9 @@ Meatspace Chat host. Be sure to change the following values:
 ## Example Playbook
 
 After configuration a basic Meatspace Chat installation and activation is possible
-using the included `site.yml` playbook:
+using the included `site.yml` playbook. You should edit `site.yml` and modify
+the `meatspacechat_twitter_key` and `meatspacechat_twitter_secret` variables
+passed to the role
 
 ```
 ansible-playbook -i hosts site.yml
