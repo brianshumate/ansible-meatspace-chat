@@ -30,7 +30,7 @@ All variables are specified in `defaults/main.yml` and `vars/main.yml`.
 | meatspacechat_os_packages | list | List of OS dependency packages to install |
 | meatspacechat_repo | github.com/meatspaces/meatspacechat.git | Meatspace Chat GitHub repository |
 | meatspacechat_nvm_repo | github.com/creationix/nvm.git | Node Version Manager Github repository |
-| meatspacechat_zeromq_pkg | zeromq-4.0.4.tar.gz | ØMQ source package URL |
+| meatspacechat_zeromq_pkg | zeromq-4.0.4 | ØMQ source package URL |
 
 The following Node.js dependency packages are defined in
 `meatspacechat_global_node_packages` and installed globally into the Node.js
