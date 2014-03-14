@@ -1,0 +1,10 @@
+---
+# File: site.yml - Meatspace Chat playbook for Vagrant based instance
+
+- name: Meatspace Chat activate!
+  hosts: meatspace-chat
+  sudo: True
+  gather_facts: False
+  roles:
+  - { role: brianshumate.meatspace-chat }
+

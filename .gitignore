@@ -1,0 +1,11 @@
+## directories
+.vagrant
+node_modules
+
+## files
+
+.DS_Store
+.tm_properties
+_meatspace-chat.env.j2
+hosts
+npm-debug.log

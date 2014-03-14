@@ -1,0 +1,49 @@
+---
+# File: defaults/main.yml - Default variables for Meatspace Chat role
+
+#############################################################################
+#
+# meatspace-chat_domain:        URL for Meatspace Chat app
+# meatspace-chat_port:          TCP port for Meatspace Chat app
+# meatspace-chat_secret:        Meatspace Chat session secret
+# meatspace-chat_node_version:  Preferred Node.js version
+# meatspace-chat_node_packages: List of Node.js dependency packages to install
+# meatspace-chat_os_packages:   List of OS dependency packages to install
+# meatspace-chat_repo:          Meatspace Chat GitHub repository
+# meatspace-chat_nvm_repo:      Node Version Manager Github repository
+# meatspace-chat_zeromq_pkg:    ØMQ source package URL
+#
+#############################################################################
+
+meatspace-chat_domain: "http://127.0.0.1"
+
+meatspace-chat_port: 3000
+
+meatspace-chat_secret: "FIXME"
+
+meatspace-chat_twitter_key: "FIXME"
+
+meatspace-chat_twitter_secret: "FIXME"
+
+meatspace-chat_node_version: 0.10.26
+
+meatspace-chat_repo: "github.com/meatspaces/meatspace-chat.git"
+
+meatspace-chat_nvm_repo: "github.com/creationix/nvm.git"
+
+meatspace-chat_global_node_packages:
+  - bower
+  - nodemon
+
+meatspace-chat_os_packages:
+  - build-essential
+  - curl
+  - git-core
+  - libssl-dev
+  - redis-server
+  - uuid-dev
+  - uuid
+  - zsh
+
+meatspace-chat_zeromq_pkg: "zeromq-4.0.4.tar.gz"
+

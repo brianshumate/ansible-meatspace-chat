@@ -1,0 +1,85 @@
+---
+# File: tasks/main.yml - Tasks for Meatspace Chat role
+
+- name: Update OS package cache
+  sudo: True
+  apt: update-cache=yes
+  tags:
+    - system_packages
+
+- name: Install OS packages
+  sudo: True
+  apt: "pkg={{ item }} state=installed"
+  with_items: meatspace-chat_os_packages
+  tags:
+    - system_packages
+
+- name: Download ØMQ
+  get_url: "url=http://download.zeromq.org/{{ meatspace-chat_zeromq_pkg }} dest=/tmp/"
+
+- name: Build ØMQ
+  command: "tar zxf {{ meatspace-chat_zeromq_pkg }} chdir=/tmp"
+  command: "./configure chdir=/tmp"
+  command: "make chdir=/tmp"
+
+- name: Install
+  sudo: True
+  command: "make install {{ meatspace-chat_zeromq_pkg }} chdir=/tmp"
+
+- name: Install Node Version Manager
+  sudo: False
+  git: "repo=https://{{ meatspace-chat_nvm_repo }} dest={{ meatspace-chat_nvm_dir }}"
+  tags:
+    - node_packages
+
+- name: Install Node.js
+  sudo: False
+  shell: ". {{ meatspace-chat_nvm_dir }}/nvm.sh && nvm install {{ meatspace-chat_node_version }} creates={{ meatspace-chat_node_dir }} executable=/bin/bash"
+  tags:
+    - node_packages
+
+- name: Clone Meatspace Chat repository
+  sudo: False
+  git: "repo=git://{{ meatspace-chat_repo }} dest={{ meatspace-chat_dir }}"
+
+- name: Define Meatspace Chat configuration
+  sudo: False
+  template: "src=local.json.j2 dest={{ meatspace-chat_dir }}/local.json"
+  template: "src=clients.json.j2 dest={{ meatspace-chat_dir }}/clients.json"
+  template: "src=whitelist.json.j2 dest={{ meatspace-chat_dir }}/whitelist.json"
+  tags:
+    - meatspace-chat_config
+
+- name: Install Meatspace Chat NPM items
+  sudo: False
+  command: "{{ meatspace-chat_node_dir }}/npm install chdir={{ meatspace-chat_dir }}"
+  tags:
+    - node_packages
+
+- name: Install global NPM items
+  sudo: False
+  command: "{{ meatspace-chat_node_dir }}/npm install {{ item }} chdir={{ meatspace-chat_dir }} creates={{ meatspace-chat_dir }}/node_modules/{{ item }}"
+  with_items: meatspace-chat_global_node_packages
+  tags:
+    - node_packages
+
+- name: Install Bower items
+  command: "bower install chdir={{ meatspace-chat_dir }}"
+
+- name: Grunt build
+  command: "npm run-script grunt build chdir= {{ meatspace-chat_dir }}"
+
+- name: Create upstart script
+  sudo: True
+  template: "src=start_meatspace-chat.sh.j2 dest={{ meatspace-chat_dir }}/start_meatspace-chat.sh mode=0744"
+
+- name: Create upstart configuration
+  sudo: True
+  template: src=meatspace-chat.conf.j2 dest=/etc/init/meatspace-chat.conf
+
+- name: Start Meatspace Chat
+  sudo: True
+  service: name=meatspace-chat state=started
+  tags:
+    - meatspace-chat_service
+
