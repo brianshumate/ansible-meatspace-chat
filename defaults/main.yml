@@ -45,5 +45,6 @@ meatspacechat_os_packages:
   - uuid
   - zsh
 
-meatspacechat_zeromq_pkg: "zeromq-4.0.4"
+meatspacechat_zeromq: "zeromq-4.0.4"
+meatspacechat_zeromq_pkg: "zeromq-4.0.4.tar.gz"
 
