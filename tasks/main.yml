@@ -22,9 +22,13 @@
   command: "./configure chdir=/tmp"
   command: "make chdir=/tmp"
 
-- name: Install
+- name: Install ØMQ
   sudo: True
   command: "make install {{ meatspacechat_zeromq_pkg }} chdir=/tmp"
+
+- name: Update shared libs
+  sudeo: True
+  command: "ldconfig"
 
 - name: Install Node Version Manager
   sudo: False
