@@ -27,7 +27,7 @@
   command: "make install {{ meatspacechat_zeromq_pkg }} chdir=/tmp"
 
 - name: Update shared libs
-  sudeo: True
+  sudo: True
   command: "ldconfig"
 
 - name: Install Node Version Manager
