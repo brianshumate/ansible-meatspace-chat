@@ -19,7 +19,7 @@
   tags: zeromq
 
 - name: Unpack ØMQ
-  shell: "/bin/tar -zxf {{ meatspacechat_zeromq_pkg }} chdir=/tmp creates={{ /tmp/meatspacechat_zeromq }}"
+  shell: "tar zxf {{ meatspacechat_zeromq_pkg }} chdir=/tmp"
   tags:
     - zeromq
 
