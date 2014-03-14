@@ -86,6 +86,17 @@ using the included `site.yml` playbook:
 ansible-playbook -i hosts site.yml
 ```
 
+## Vagrant
+
+See the README_VAGRANT.md for instructions on using this role with Mac OS X
+and Vagrant or just:
+
+```
+vagrant up
+```
+
+from within the role.
+
 ## Dependencies
 
 None
