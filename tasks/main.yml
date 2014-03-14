@@ -19,19 +19,19 @@
   tags: zeromq
 
 - name: Configure ØMQ
-  command: "tar -zxf {{ meatspacechat_zeromq_pkg }}.tar.gz chdir=/tmp creates={{ meatspacechat_zeromq_pkg }}"
-  command: "./configure chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
+  shell: "tar -zxf {{ meatspacechat_zeromq_pkg }}.tar.gz chdir=/tmp creates={{ meatspacechat_zeromq_pkg }}"
+  shell: "./configure chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
   tags:
     - zeromq
 
-#- name: Build ØMQ
-#  command: "make chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
-#  tags:
-#    - zeromq
+- name: Build ØMQ
+  shell: "make chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
+  tags:
+    - zeromq
 
 - name: Install ØMQ
   sudo: True
-  command: "make install {{ meatspacechat_zeromq_pkg }} chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
+  shell: "make install {{ meatspacechat_zeromq_pkg }} chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
   tags:
     - zeromq
 
