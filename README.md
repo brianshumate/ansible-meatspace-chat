@@ -1,7 +1,7 @@
 # Ansible Meatspace Chat
 
 This is an [Ansible](http://www.ansible.com/) role for
-[Meatspace Chat](https://github.com/meatspaces/meatspace-chat), the fantastic
+[Meatspace Chat](https://github.com/meatspaces/meatspacechat), the fantastic
 web chat with animated .GIF goodness and so much more.
 
 ## Requirements
@@ -22,25 +22,25 @@ All variables are specified in `defaults/main.yml` and `vars/main.yml`.
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| meatspace-chat_domain  | http://127.0.0.1 | URL for Meatspace Chat app |
-| meatspace-chat_port | 3000 | TCP port for Meatspace Chat app |
-| meatspace-chat_secret | "" | Meatspace Chat session secret |
-| meatspace-chat_node_version | 0.10.26 | Preferred Node.js version |
-| meatspace-chat_node_packages | list | List of Node.js dependency packages to install |
-| meatspace-chat_os_packages | list | List of OS dependency packages to install |
-| meatspace-chat_repo | github.com/meatspaces/meatspace-chat.git | Meatspace Chat GitHub repository |
-| meatspace-chat_nvm_repo | github.com/creationix/nvm.git | Node Version Manager Github repository |
-| meatspace-chat_zeromq_pkg | zeromq-4.0.4.tar.gz | ØMQ source package URL |
+| meatspacechat_domain  | http://127.0.0.1 | URL for Meatspace Chat app |
+| meatspacechat_port | 3000 | TCP port for Meatspace Chat app |
+| meatspacechat_secret | "" | Meatspace Chat session secret |
+| meatspacechat_node_version | 0.10.26 | Preferred Node.js version |
+| meatspacechat_node_packages | list | List of Node.js dependency packages to install |
+| meatspacechat_os_packages | list | List of OS dependency packages to install |
+| meatspacechat_repo | github.com/meatspaces/meatspacechat.git | Meatspace Chat GitHub repository |
+| meatspacechat_nvm_repo | github.com/creationix/nvm.git | Node Version Manager Github repository |
+| meatspacechat_zeromq_pkg | zeromq-4.0.4.tar.gz | ØMQ source package URL |
 
 The following Node.js dependency packages are defined in
-`meatspace-chat_global_node_packages` and installed globally into the Node.js
+`meatspacechat_global_node_packages` and installed globally into the Node.js
 environment:
 
 * bower
 * nodemon
 
 The following OS dependency packages are defined in
-`meatspace-chat_os_packages` and installed by default:
+`meatspacechat_os_packages` and installed by default:
 
 * build-essential
 * curl
@@ -57,10 +57,10 @@ Most of these packages are required with the exception of `curl` and `zsh`.
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| meatspace-chat_admin    | vagrant       | OS user account of Meatspace Chat owner
-| meatspace-chat_nvm_dir  | /home/{{ meatspace-chat_admin }}/nvm | Directory for Node Version Manager (nvm) installation |
-| meatspace-chat_node_dir | {{ meatspace-chat_nvm_dir }}/v{{ meatspace-chat_node_version }}/bin | Directory for Node.js installation
-| meatspace-chat_dir | /home/{{ meatspace-chat_admin }}/meatspace-chat | The Meatspace Chat root directory
+| meatspacechat_admin    | vagrant       | OS user account of Meatspace Chat owner
+| meatspacechat_nvm_dir  | /home/{{ meatspacechat_admin }}/nvm | Directory for Node Version Manager (nvm) installation |
+| meatspacechat_node_dir | {{ meatspacechat_nvm_dir }}/v{{ meatspacechat_node_version }}/bin | Directory for Node.js installation
+| meatspacechat_dir | /home/{{ meatspacechat_admin }}/meatspacechat | The Meatspace Chat root directory
 
 ## Configuration
 
@@ -75,7 +75,7 @@ Meatspace Chat host. Be sure to change the following values:
 
 * `0.0.0.0`
 * `ubuntu`
-* `~/.ssh/meatspace-chat_id`
+* `~/.ssh/meatspacechat_id`
 
 ## Example Playbook
 
