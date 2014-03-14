@@ -16,15 +16,24 @@
 
 - name: Download ØMQ
   get_url: "url=http://download.zeromq.org/{{ meatspacechat_zeromq_pkg }}.tar.gz dest=/tmp/"
+  tags: zeromq
 
-- name: Build ØMQ
-  command: "tar zxf {{ meatspacechat_zeromq_pkg }}.tar.gz chdir=/tmp"
+- name: Configure ØMQ
+  command: "tar -zxf {{ meatspacechat_zeromq_pkg }}.tar.gz chdir=/tmp creates={{ meatspacechat_zeromq_pkg }}"
   command: "./configure chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
-  command: "make chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
+  tags:
+    - zeromq
+
+#- name: Build ØMQ
+#  command: "make chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
+#  tags:
+#    - zeromq
 
 - name: Install ØMQ
   sudo: True
   command: "make install {{ meatspacechat_zeromq_pkg }} chdir=/tmp/{{ meatspacechat_zeromq_pkg }}"
+  tags:
+    - zeromq
 
 - name: Update shared libs
   sudo: True
