@@ -18,9 +18,13 @@
   get_url: "url=http://download.zeromq.org/{{ meatspacechat_zeromq_pkg }} dest=/tmp/"
   tags: zeromq
 
-- name: Configure and build ØMQ
+- name: Configure ØMQ
   shell: "tar zxf {{ meatspacechat_zeromq_pkg }} chdir=/tmp"
   shell: "./configure chdir=/tmp/{{ meatspacechat_zeromq }}"
+  tags:
+    - zeromq
+
+- name: Build ØMQ
   shell: "make chdir=/tmp/{{ meatspacechat_zeromq }}"
   tags:
     - zeromq
