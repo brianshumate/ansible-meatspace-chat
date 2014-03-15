@@ -9,3 +9,5 @@ node_modules
 _meatspace-chat.env.j2
 hosts
 npm-debug.log
+site.yml
+

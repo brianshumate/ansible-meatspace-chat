@@ -89,7 +89,7 @@
 
 - name: Create upstart script
   sudo: True
-  template: "src=start_meatspacechat.sh.j2 dest={{ meatspacechat_dir }}/start_meatspacechat.sh mode=0744"
+  template: "src=start_meatspacechat.sh.j2 dest={{ meatspacechat_dir }}/start_meatspacechat.sh mode=0755"
 
 - name: Create upstart configuration
   sudo: True
