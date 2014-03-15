@@ -76,7 +76,7 @@
 
 - name: Install global NPM items
   sudo: False
-  shell: "{{ meatspacechat_node_dir }}/npm install {{ item }} chdir={{ meatspacechat_dir }} creates={{ meatspacechat_dir }}/node_modules/{{ item }}"
+  shell: ". {{ meatspacechat_nvm_dir }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g {{ item }} chdir={{ meatspacechat_dir }} creates={{ meatspacechat_dir }}/node_modules/{{ item }}"
   with_items: meatspacechat_global_node_packages
   tags:
     - node_packages
