@@ -42,7 +42,7 @@
 
 - name: Update shared libs
   sudo: True
-  command: "ldconfig"
+  shell: "ldconfig"
 
 - name: Install Node Version Manager
   sudo: False
@@ -70,22 +70,22 @@
 
 - name: Install Meatspace Chat NPM items
   sudo: False
-  command: "{{ meatspacechat_node_dir }}/npm install chdir={{ meatspacechat_dir }}"
+  shell: "{{ meatspacechat_node_dir }}/npm install chdir={{ meatspacechat_dir }}"
   tags:
     - node_packages
 
 - name: Install global NPM items
   sudo: False
-  command: "{{ meatspacechat_node_dir }}/npm install {{ item }} chdir={{ meatspacechat_dir }} creates={{ meatspacechat_dir }}/node_modules/{{ item }}"
+  shell: "{{ meatspacechat_node_dir }}/npm install {{ item }} chdir={{ meatspacechat_dir }} creates={{ meatspacechat_dir }}/node_modules/{{ item }}"
   with_items: meatspacechat_global_node_packages
   tags:
     - node_packages
 
 - name: Install Bower items
-  command: "bower install chdir={{ meatspacechat_dir }}"
+  shell: "bower install chdir={{ meatspacechat_dir }}"
 
 - name: Grunt build
-  command: "npm run-script grunt build chdir= {{ meatspacechat_dir }}"
+  shell: "npm run-script grunt build chdir= {{ meatspacechat_dir }}"
 
 - name: Create upstart script
   sudo: True
