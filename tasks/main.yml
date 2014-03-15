@@ -18,17 +18,9 @@
   get_url: "url=http://download.zeromq.org/{{ meatspacechat_zeromq_pkg }} dest=/tmp/"
   tags: zeromq
 
-- name: Unpack ØMQ
+- name: Configure and build ØMQ
   shell: "tar zxf {{ meatspacechat_zeromq_pkg }} chdir=/tmp"
-  tags:
-    - zeromq
-
-- name: Configure ØMQ
   shell: "./configure chdir=/tmp/{{ meatspacechat_zeromq }}"
-  tags:
-    - zeromq
-
-- name: Build ØMQ
   shell: "make chdir=/tmp/{{ meatspacechat_zeromq }}"
   tags:
     - zeromq
@@ -36,6 +28,7 @@
 - name: Install ØMQ
   sudo: True
   shell: "make install {{ meatspacechat_zeromq }} chdir=/tmp/{{ meatspacechat_zeromq }}"
+  ignore_errors: yes
   tags:
     - zeromq
 
