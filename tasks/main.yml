@@ -74,18 +74,24 @@
   tags:
     - node_packages
 
-- name: Install global NPM items
+- name: Install Bower
   sudo: False
-  shell: ". {{ meatspacechat_nvm_dir }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g {{ item }} chdir={{ meatspacechat_dir }} creates={{ meatspacechat_dir }}/node_modules/{{ item }}"
-  with_items: meatspacechat_global_node_packages
+  shell: ". {{ meatspacechat_nvm_dir }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g bower chdir={{ meatspacechat_dir }}"
   tags:
     - node_packages
 
-- name: Install Bower items
-  shell: ". {{ meatspacechat_nvm_dir }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && bower install chdir={{ meatspacechat_dir }}"
+- name: Install Nodemon
+  sudo: False
+  shell: ". {{ meatspacechat_nvm_dir }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g nodemon chdir={{ meatspacechat_dir }}"
+  tags:
+    - node_packages
+
+- name: Install Bower packages
   sudo: False
 - name: Grunt build
-  shell: "npm run-script grunt build chdir= {{ meatspacechat_dir }}"
+  shell: ". {{ meatspacechat_nvm_dir }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && bower install chdir={{ meatspacechat_dir }}"
+  tags:
+    - node_packages
 
 - name: Create upstart script
   sudo: True
