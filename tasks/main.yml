@@ -82,7 +82,7 @@
     - node_packages
 
 - name: Install Bower items
-  shell: "bower install chdir={{ meatspacechat_dir }}"
+  shell: ". {{ meatspacechat_nvm_dir }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && bower install chdir={{ meatspacechat_dir }}"
   sudo: False
 - name: Grunt build
   shell: "npm run-script grunt build chdir= {{ meatspacechat_dir }}"
