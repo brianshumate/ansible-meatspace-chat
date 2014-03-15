@@ -23,8 +23,12 @@
   tags:
     - zeromq
 
-- name: Build ØMQ
+- name: Configure ØMQ
   shell: "./configure chdir=/tmp/{{ meatspacechat_zeromq }}"
+  tags:
+    - zeromq
+
+- name: Build ØMQ
   shell: "make chdir=/tmp/{{ meatspacechat_zeromq }}"
   tags:
     - zeromq
