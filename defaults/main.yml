@@ -27,7 +27,7 @@ meatspacechat_twitter_secret: "FIXME"
 
 meatspacechat_node_version: 0.10.26
 
-meatspacechat_repo: "github.com/meatspaces/meatspacechat.git"
+meatspacechat_repo: "github.com/meatspaces/meatspace-chat.git"
 
 meatspacechat_nvm_repo: "github.com/creationix/nvm.git"
 
