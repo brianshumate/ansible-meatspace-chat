@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #
-# File: start_meatspacechat.sh - startup script for Meatspace Chat
+# File: start_meatspace-chat.sh - startup script for Meatspace Chat
 #
 
 # Start Meatspace Chat in the background
 
-cd {{ meatspacechat_dir }}
+cd {{ meatspace-chat_dir }}
 
 . .nvm/nvm.sh
-nvm use {{ meatspacechat_node_version }}
+nvm use {{ meatspace-chat_node_version }}
 
 npm start
 

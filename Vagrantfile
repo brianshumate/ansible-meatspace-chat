@@ -11,21 +11,21 @@ BOX_URI = ENV['BOX_URI'] || "http://opscode-vm-bento.s3.amazonaws.com/vagrant/vi
 BOT_HOST = ENV['BOT_HOST'] || "vagrant_hosts"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.define :meatspacechat do |meatspacechat_config|
-    meatspacechat_config.vm.box = BOX_NAME
-    meatspacechat_config.vm.box_url = BOX_URI
-    meatspacechat_config.vm.network :private_network, ip: "10.1.1.40"
-    meatspacechat_config.vm.hostname = "meatspacechat.local"
-    meatspacechat_config.ssh.forward_agent = true
-    meatspacechat_config.vm.provider "virtualbox" do |v|
-      v.name = "meatspacechat"
+  config.vm.define :meatspace-chat do |meatspace-chat_config|
+    meatspace-chat_config.vm.box = BOX_NAME
+    meatspace-chat_config.vm.box_url = BOX_URI
+    meatspace-chat_config.vm.network :private_network, ip: "10.1.1.40"
+    meatspace-chat_config.vm.hostname = "meatspace-chat.local"
+    meatspace-chat_config.ssh.forward_agent = true
+    meatspace-chat_config.vm.provider "virtualbox" do |v|
+      v.name = "meatspace-chat"
       v.customize ["modifyvm", :id, "--memory", BOX_MEM]
       v.customize ["modifyvm", :id, "--ioapic", "on"]
       v.customize ["modifyvm", :id, "--cpus", "1"]
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     end
-    meatspacechat_config.vm.provision :ansible do |ansible|
+    meatspace-chat_config.vm.provision :ansible do |ansible|
       ansible.inventory_path = BOT_HOST
       ansible.playbook = "site.yml"
       ansible.limit = "all"

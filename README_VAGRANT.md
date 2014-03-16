@@ -1,7 +1,7 @@
 # Ansible Meatspace Chat with Vagrant
 
 This is an [Ansible](http://www.ansible.com/) role for
-[Meatspace Chat](https://github.com/meatspaces/meatspacechat), the fantastic
+[Meatspace Chat](https://github.com/meatspaces/meatspace-chat), the fantastic
 web chat with animated .GIF goodness and so much more.
 
 ## Requirements
@@ -16,7 +16,7 @@ function on Ubuntu with the following specific software versions:
 * Node.js: 0.10.26
 * Ubuntu: 13.10, 13.04, 12.10, 12.04
 
-## Meatspace Chat Acclimate!
+## Meatspace Chat Developer Instance
 
 Follow these directions for a Meatspace Chat development deployment on Mac OS X
 to an Ubuntu virtual machine on VirtualBox with Vagrant.
@@ -33,7 +33,7 @@ These tools are optional, but highly recommended:
 * [Virtualenv](http://www.virtualenv.org/)
 * [Virtualenv Wrapper](https://bitbucket.org/dhellmann/virtualenvwrapper/)
 
-### Meatspace Chat Configurate!
+### Meatspace Chat Configuration
 
 At a minimum, visit the variables defined in the following files:
 
@@ -43,20 +43,20 @@ At a minimum, visit the variables defined in the following files:
 There is more information in the main project
 [README](README.md) about these variables.
 
-Then, copy `templates/meatspacechat.env.j2` to `templates/_meatspacechat.env.j2` and update as
-necessary with the particular environment variables you need for your Meatspace Chat.
+Finally, copymeatspace-chatl.example` playbook to `meatspace-chatyou plan to
+use it and configure the following variables as appropriate:
 
-Finally, update the `site.yml` playbook if you plan to use it and set
-`meatspacechat_identity` to the short username of your bot.
+* `hosts`
+* `meatspacechat_twitter_key`
+* `meatspacechat_twitter_secret`
 
-### Meatspace Chat Activate!
+### Activate Meatspace Chat
 
-After configuring your Meatspace Chat's environment variables, you should be able to
-bootstrap the bot using a virtualenv with commands like following:
+Aftemeatspace-chat your Meatspace Chat's environment variables, you can fire
+up a Vagrant based instance by issuing the following command from the
+`ansible-meatspace-chat` role directory:
 
 ```
-mkvirtualenv ansible
-pip install ansible
 vagrant up
 ```
 

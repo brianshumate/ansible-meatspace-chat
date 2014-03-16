@@ -3,39 +3,39 @@
 
 #############################################################################
 #
-# meatspacechat_domain:        URL for Meatspace Chat app
-# meatspacechat_port:          TCP port for Meatspace Chat app
-# meatspacechat_secret:        Meatspace Chat session secret
-# meatspacechat_node_version:  Preferred Node.js version
-# meatspacechat_node_packages: List of Node.js dependency packages to install
-# meatspacechat_os_packages:   List of OS dependency packages to install
-# meatspacechat_repo:          Meatspace Chat GitHub repository
-# meatspacechat_nvm_repo:      Node Version Manager Github repository
-# meatspacechat_zeromq_pkg:    ØMQ source package URL
+# meatspace-chat_domain:        URL for Meatspace Chat app
+# meatspace-chat_port:          TCP port for Meatspace Chat app
+# meatspace-chat_secret:        Meatspace Chat session secret
+# meatspace-chat_node_version:  Preferred Node.js version
+# meatspace-chat_node_packages: List of Node.js dependency packages to install
+# meatspace-chat_os_packages:   List of OS dependency packages to install
+# meatspace-chat_repo:          Meatspace Chat GitHub repository
+# meatspace-chat_nvm_repo:      Node Version Manager Github repository
+# meatspace-chat_zeromq_pkg:    ØMQ source package URL
 #
 #############################################################################
 
-meatspacechat_domain: "http://127.0.0.1"
+meatspace-chat_domain: "http://10.1.1.40"
 
-meatspacechat_port: 3000
+meatspace-chat_port: 3000
 
-meatspacechat_secret: "FIXME"
+meatspace-chat_secret: "FIXME"
 
-meatspacechat_twitter_key: "FIXME"
+meatspace-chat_twitter_key: "FIXME"
 
-meatspacechat_twitter_secret: "FIXME"
+meatspace-chat_twitter_secret: "FIXME"
 
-meatspacechat_node_version: 0.10.26
+meatspace-chat_node_version: 0.10.26
 
-meatspacechat_repo: "github.com/meatspaces/meatspace-chat.git"
+meatspace-chat_repo: "github.com/meatspaces/meatspace-chat.git"
 
-meatspacechat_nvm_repo: "github.com/creationix/nvm.git"
+meatspace-chat_nvm_repo: "github.com/creationix/nvm.git"
 
-meatspacechat_global_node_packages:
+meatspace-chat_global_node_packages:
   - bower
   - nodemon
 
-meatspacechat_os_packages:
+meatspace-chat_os_packages:
   - build-essential
   - curl
   - git-core
@@ -45,6 +45,6 @@ meatspacechat_os_packages:
   - uuid
   - zsh
 
-meatspacechat_zeromq: "zeromq-4.0.4"
-meatspacechat_zeromq_pkg: "zeromq-4.0.4.tar.gz"
+meatspace-chat_zeromq: "zeromq-4.0.4"
+meatspace-chat_zeromq_pkg: "zeromq-4.0.4.tar.gz"
 
