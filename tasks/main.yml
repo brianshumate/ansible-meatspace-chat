@@ -44,7 +44,7 @@
   sudo: True
   shell: "ldconfig"
 
-- name: Install Node Version Manager
+- name: Install NVM
   sudo: False
   git: "repo=https://{{ meatspace_chat_nvm_repo }} dest=/home/{{ meatspace_chat_admin }}/.nvm"
   tags:
@@ -56,11 +56,11 @@
   tags:
     - node_packages
 
-- name: Clone Meatspace Chat repository
+- name: Clone Meatspace Chat
   sudo: False
   git: "repo=git://{{ meatspace_chat_repo }} dest={{ meatspace_chat_dir }}"
 
-- name: Install Meatspace Chat NPM items
+- name: Install NPM items
   sudo: False
   shell: ". /home/{{ meatspace_chat_admin }}/.nvm/nvm.sh && nvm use {{ meatspace_chat_node_version }} && npm install chdir={{ meatspace_chat_dir }}"
   tags:
@@ -88,21 +88,27 @@
   sudo: False
   shell: ". /home/{{ meatspace_chat_admin }}/.nvm/nvm.sh && nvm use {{ meatspace_chat_node_version }} && npm run-script grunt build chdir={{ meatspace_chat_dir }}"
 
-- name: Define Meatspace Chat configuration
+- name: Meatspace Chat locals
   sudo: False
-  template: "src=local.json.j2 dest={{ meatspace_chat_dir }}/local.json"
-  template: "src=clients.json.j2 dest={{ meatspace_chat_dir }}/clients.json"
-  template: "src=whitelist.json.j2 dest={{ meatspace_chat_dir }}/whitelist.json"
+  template: "src=local.json.j2 dest={{ meatspace_chat_dir }}/local.json owner={{ meatspace_chat_admin }} group={{ meatspace_chat_admin }} mode=0644"
+
+- name: Meatspace Chat clients
+  sudo: False
+  template: "src=clients.json.j2 dest={{ meatspace_chat_dir }}/clients.json owner={{ meatspace_chat_admin }} group={{ meatspace_chat_admin }} mode=0644"
+
+- name: Meatspace Chat whitelist
+  sudo: False
+  template: "src=whitelist.json.j2 dest={{ meatspace_chat_dir }}/whitelist.json owner={{ meatspace_chat_admin }} group={{ meatspace_chat_admin }} mode=0644"
   tags:
     - meatspace_chat_config
-
-- name: Create upstart script
-  sudo: True
-  template: "src=start_meatspace-chat.sh.j2 dest={{ meatspace_chat_dir }}/start_meatspace-chat.sh mode=0755"
 
 - name: Create upstart configuration
   sudo: True
   template: src=meatspace-chat.conf.j2 dest=/etc/init/meatspace-chat.conf
+
+- name: Create upstart script
+  sudo: True
+  template: "src=start_meatspace-chat.sh.j2 dest={{ meatspace_chat_dir }}/start_meatspace-chat.sh mode=0755"
 
 - name: Start Meatspace Chat
   sudo: True
