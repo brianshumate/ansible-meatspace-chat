@@ -3,16 +3,16 @@
 
 #############################################################################
 #
-# meatspace-chat_admin:          OS user account of Meatspace Chat owner
-# meatspace-chat_nvm_dir:        Directory for Node Version Manager (nvm)
-# meatspace-chat_node_dir:       Directory for Node.js installation
-# meatspace-chat_src_dir:        Directory for Meatspace Chat source code
-# meatspace-chat_dir:            The Meatspace Chat root directory
+# meatspace_chat_admin:          OS user account of Meatspace Chat owner
+# meatspace_chat_nvm_dir:        Directory for Node Version Manager (nvm)
+# meatspace_chat_node_dir:       Directory for Node.js installation
+# meatspace_chat_src_dir:        Directory for Meatspace Chat source code
+# meatspace_chat_dir:            The Meatspace Chat root directory
 #
 #############################################################################
 
-meatspace-chat_admin: vagrant
-meatspace-chat_nvm_dir: "/home/{{ meatspace-chat_admin }}/nvm"
-meatspace-chat_node_dir: "{{ meatspace-chat_nvm_dir }}/v{{ meatspace-chat_node_version }}/bin"
-meatspace-chat_dir: "/home/{{ meatspace-chat_admin }}/meatspace-chat"
+meatspace_chat_admin: vagrant
+meatspace_chat_nvm_dir: "/home/{{ meatspace_chat_admin }}/nvm"
+meatspace_chat_node_dir: "{{ meatspace_chat_nvm_dir }}/v{{ meatspace_chat_node_version }}/bin"
+meatspace_chat_dir: "/home/{{ meatspace_chat_admin }}/meatspace_chat"
 

@@ -1,7 +1,7 @@
 # Ansible Meatspace Chat with Vagrant
 
 This is an [Ansible](http://www.ansible.com/) role for
-[Meatspace Chat](https://github.com/meatspaces/meatspace-chat), the fantastic
+[Meatspace Chat](https://github.com/meatspaces/meatspace_chat), the fantastic
 web chat with animated .GIF goodness and so much more.
 
 ## Requirements
@@ -43,7 +43,7 @@ At a minimum, visit the variables defined in the following files:
 There is more information in the main project
 [README](README.md) about these variables.
 
-Finally, copymeatspace-chatl.example` playbook to `meatspace-chatyou plan to
+Finally, copymeatspace_chatl.example` playbook to `meatspace_chatyou plan to
 use it and configure the following variables as appropriate:
 
 * `hosts`
@@ -52,9 +52,9 @@ use it and configure the following variables as appropriate:
 
 ### Activate Meatspace Chat
 
-Aftemeatspace-chat your Meatspace Chat's environment variables, you can fire
+Aftemeatspace_chat your Meatspace Chat's environment variables, you can fire
 up a Vagrant based instance by issuing the following command from the
-`ansible-meatspace-chat` role directory:
+`ansible-meatspace_chat` role directory:
 
 ```
 vagrant up
