@@ -60,14 +60,6 @@
   sudo: False
   git: "repo=git://{{ meatspacechat_repo }} dest={{ meatspacechat_dir }}"
 
-- name: Define Meatspace Chat configuration
-  sudo: False
-  template: "src=local.json.j2 dest={{ meatspacechat_dir }}/local.json"
-  template: "src=clients.json.j2 dest={{ meatspacechat_dir }}/clients.json"
-  template: "src=whitelist.json.j2 dest={{ meatspacechat_dir }}/whitelist.json"
-  tags:
-    - meatspacechat_config
-
 - name: Install Meatspace Chat NPM items
   sudo: False
   shell: ". /home/{{ meatspacechat_admin }}/.nvm/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install chdir={{ meatspacechat_dir }}"
@@ -96,6 +88,13 @@
   sudo: False
   shell: ". /home/{{ meatspacechat_admin }}/.nvm/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm run-script grunt build chdir={{ meatspacechat_dir }}"
 
+- name: Define Meatspace Chat configuration
+  sudo: False
+  template: "src=local.json.j2 dest={{ meatspacechat_dir }}/local.json"
+  template: "src=clients.json.j2 dest={{ meatspacechat_dir }}/clients.json"
+  template: "src=whitelist.json.j2 dest={{ meatspacechat_dir }}/whitelist.json"
+  tags:
+    - meatspacechat_config
 
 - name: Create upstart script
   sudo: True
