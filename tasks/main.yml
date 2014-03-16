@@ -46,7 +46,7 @@
 
 - name: Install Node Version Manager
   sudo: False
-  git: "repo=https://{{ meatspacechat_nvm_repo }} dest={{ /home/{{ meatspacechat_admin }}/.nvm }}"
+  git: "repo=https://{{ meatspacechat_nvm_repo }} dest=/home/{{ meatspacechat_admin }}/.nvm"
   tags:
     - node_packages
 
