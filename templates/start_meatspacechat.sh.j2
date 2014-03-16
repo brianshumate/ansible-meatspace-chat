@@ -5,10 +5,10 @@
 
 # Start Meatspace Chat in the background
 
-. {{ meatspacechat_nvm_dir }}/nvm.sh
-nvm use {{ meatspacechat_node_version }}
-
 cd {{ meatspacechat_dir }}
+
+. .nvm/nvm.sh
+nvm use {{ meatspacechat_node_version }}
 
 npm start
 
