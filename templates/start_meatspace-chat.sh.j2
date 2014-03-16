@@ -3,11 +3,9 @@
 # File: start_meatspace_chat.sh - startup script for Meatspace Chat
 #
 
-# Start Meatspace Chat in the background
-
 cd {{ meatspace_chat_dir }}
 
-. .nvm/nvm.sh
+. {{ meatspace_chat_admin }}/.nvm/nvm.sh
 nvm use {{ meatspace_chat_node_version }}
 
 npm start
