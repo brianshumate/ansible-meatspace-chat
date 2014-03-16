@@ -98,15 +98,15 @@
 
 - name: Create upstart script
   sudo: True
-  template: "src=start_meatspace_chat.sh.j2 dest={{ meatspace_chat_dir }}/start_meatspace_chat.sh mode=0755"
+  template: "src=start_meatspace-chat.sh.j2 dest={{ meatspace_chat_dir }}/start_meatspace_chat.sh mode=0755"
 
 - name: Create upstart configuration
   sudo: True
-  template: src=meatspace_chat.conf.j2 dest=/etc/init/meatspace_chat.conf
+  template: src=meatspace-chat.conf.j2 dest=/etc/init/meatspace_chat.conf
 
 - name: Start Meatspace Chat
   sudo: True
-  service: name=meatspace_chat state=started
+  service: name=meatspace-chat state=started
   tags:
     - meatspace_chat_service
 
