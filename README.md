@@ -6,7 +6,7 @@ web chat with animated .GIF goodness and so much more.
 
 ## Requirements
 
-This Meatspace Chat role requires a Debian based Linux host and has been tested to
+The Meatspace Chat role requires a Debian based Linux host and is tested to
 function on Ubuntu with the following specific software versions:
 
 * Ansible: 1.5.3
@@ -30,7 +30,7 @@ All variables are specified in `defaults/main.yml` and `vars/main.yml`.
 | meatspace_chat_os_packages | list | List of OS dependency packages to install |
 | meatspace_chat_repo | github.com/meatspaces/meatspace_chat.git | Meatspace Chat GitHub repository |
 | meatspace_chat_nvm_repo | github.com/creationix/nvm.git | Node Version Manager Github repository |
-| meatspace_chat_zeromq_pkg | zeromq-4.0.4 | ØMQ source package URL |
+| meatspace_chat_zeromq_pkg | zeromq-4.0.4.tar.gz | ØMQ source package |
 
 The following Node.js dependency packages are defined in
 `meatspace_chat_global_node_packages` and installed globally into the Node.js
@@ -91,16 +91,15 @@ should ignore it.
 ansible-playbook -i hosts site.yml
 ```
 
-## Vagrant
+## Development Vagrant Instance
 
 See the README_VAGRANT.md for instructions on using this role with Mac OS X
-and Vagrant or just:
+and Vagrant or just change into the `ansible-meatspace-chat` role
+directory and:
 
 ```
 vagrant up
 ```
-
-from within the role.
 
 ## Dependencies
 
