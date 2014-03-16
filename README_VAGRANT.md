@@ -54,3 +54,11 @@ directory and executing:
 vagrant up
 ```
 
+You can now point a browser that supports WebRTC to access your shiny new
+Meatspace Chat at this url:
+
+```
+http://10.1.1.40:3000
+```
+
+Enjoy!
