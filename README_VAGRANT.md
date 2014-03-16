@@ -1,7 +1,7 @@
 # Ansible Meatspace Chat with Vagrant
 
 This is an [Ansible](http://www.ansible.com/) role for
-[Meatspace Chat](https://github.com/meatspaces/meatspace_chat), the fantastic
+[Meatspace Chat](https://github.com/meatspaces/meatspace-chat), the fantastic
 web chat with animated .GIF goodness and so much more.
 
 Follow these directions for a Meatspace Chat development instance on Mac OS X
