@@ -70,7 +70,7 @@
 
 - name: Install Meatspace Chat NPM items
   sudo: False
-  shell: "{{ meatspacechat_node_dir }}/npm install chdir={{ meatspacechat_dir }}"
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install chdir={{ meatspacechat_dir }}"
   tags:
     - node_packages
 
@@ -82,16 +82,20 @@
 
 - name: Install Nodemon
   sudo: False
-  shell: ". {{ meatspacechat_nvm_dir }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g nodemon chdir={{ meatspacechat_dir }}"
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g nodemon chdir={{ meatspacechat_dir }}"
   tags:
     - node_packages
 
 - name: Install Bower packages
   sudo: False
-- name: Grunt build
-  shell: ". {{ meatspacechat_nvm_dir }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && bower install chdir={{ meatspacechat_dir }}"
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && bower install chdir={{ meatspacechat_dir }}"
   tags:
     - node_packages
+
+- name: Grunt build
+  sudo: False
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm run-script grunt build chdir={{ meatspacechat_dir }}"
+
 
 - name: Create upstart script
   sudo: True
