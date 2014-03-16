@@ -52,7 +52,7 @@
 
 - name: Install Node.js
   sudo: False
-  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm install {{ meatspacechat_node_version }} creates={{ meatspacechat_node_dir }} executable=/bin/bash"
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm/nvm.sh && nvm install {{ meatspacechat_node_version }} creates={{ meatspacechat_node_dir }} executable=/bin/bash"
   tags:
     - node_packages
 
@@ -70,31 +70,31 @@
 
 - name: Install Meatspace Chat NPM items
   sudo: False
-  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install chdir={{ meatspacechat_dir }}"
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install chdir={{ meatspacechat_dir }}"
   tags:
     - node_packages
 
 - name: Install Bower
   sudo: False
-  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g bower chdir={{ meatspacechat_dir }}"
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g bower chdir={{ meatspacechat_dir }}"
   tags:
     - node_packages
 
 - name: Install Nodemon
   sudo: False
-  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g nodemon chdir={{ meatspacechat_dir }}"
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm install -g nodemon chdir={{ meatspacechat_dir }}"
   tags:
     - node_packages
 
 - name: Install Bower packages
   sudo: False
-  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && bower install chdir={{ meatspacechat_dir }}"
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm/nvm.sh && nvm use {{ meatspacechat_node_version }} && bower install chdir={{ meatspacechat_dir }}"
   tags:
     - node_packages
 
 - name: Grunt build
   sudo: False
-  shell: ". /home/{{ meatspacechat_admin }}/.nvm }}/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm run-script grunt build chdir={{ meatspacechat_dir }}"
+  shell: ". /home/{{ meatspacechat_admin }}/.nvm/nvm.sh && nvm use {{ meatspacechat_node_version }} && npm run-script grunt build chdir={{ meatspacechat_dir }}"
 
 
 - name: Create upstart script
