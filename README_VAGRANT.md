@@ -46,9 +46,9 @@ plan to use it and edit the following variables within it as appropriate:
 
 ### Activation
 
-After defining your Meatspace Chat's variables, you can fire up an  instance
-by issuing the following command from the `ansible-meatspace-chat`
-role directory:
+After defining all variables, you can fire up your very own Meatspace Chat
+instance by changing into the `/etc/ansible/ansible-meatspace-chat` role
+directory and executing:
 
 ```
 vagrant up

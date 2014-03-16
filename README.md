@@ -93,9 +93,10 @@ ansible-playbook -i hosts site.yml
 
 ## Development Vagrant Instance
 
-See the README_VAGRANT.md for instructions on using this role with Mac OS X
-and Vagrant or just change into the `ansible-meatspace-chat` role
-directory and:
+See the [[README_VAGRANT.md]] for instructions on using this role with
+Mac OS X and Vagrant. If you have Ansible, VirtualBox, and Vagrant already
+installed, try changing into the `/etc/ansible/ansible-meatspace-chat` role
+directory and executing:
 
 ```
 vagrant up
