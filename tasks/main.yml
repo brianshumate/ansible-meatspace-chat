@@ -46,7 +46,7 @@
 
 - name: Install NVM
   sudo: False
-  git: "repo=https://{{ meatspace_chat_nvm_repo }} dest={{ meatspace_chat_nvm_dir }} creates={{ meatspace_chat_nvm_dir }}"
+  git: "repo=https://{{ meatspace_chat_nvm_repo }} dest={{ meatspace_chat_nvm_dir }}"
   tags:
     - node_packages
 
