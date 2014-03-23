@@ -86,7 +86,7 @@
 
 - name: Grunt build
   sudo: False
-  command: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && npm run-script grunt build chdir={{ meatspace_chat_dir }}"
+  command: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && npm run-script grunt build chdir={{ meatspace_chat_dir }} executable=/bin/bash"
 
 - name: Meatspace Chat locals
   sudo: False
