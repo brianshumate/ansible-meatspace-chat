@@ -12,7 +12,7 @@
 #############################################################################
 
 meatspace_chat_admin: vagrant
-meatspace_chat_nvm_dir: "/home/{{ meatspace_chat_admin }}/nvm"
+meatspace_chat_nvm_dir: "/home/{{ meatspace_chat_admin }}/.nvm"
 meatspace_chat_node_dir: "{{ meatspace_chat_nvm_dir }}/v{{ meatspace_chat_node_version }}/bin"
 meatspace_chat_dir: "/home/{{ meatspace_chat_admin }}/meatspace-chat"
 

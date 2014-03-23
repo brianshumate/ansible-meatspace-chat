@@ -6,5 +6,5 @@
   sudo: True
   gather_facts: False
   roles:
-  - { role: brianshumate.meatspace_chat, meatspace_chat_twitter_key: "FIXME", meatspace_chat_twitter_secret: "FIXME" }
+  - { role: brianshumate.meatspace_chat, meatspace_chat_twitter_key: "FIXME", meatspace_chat_twitter_secret: "FIXME", meatspace_chat_secret: "FIXME", meatspace_chat_domain: "http://10.1.1.40", meatspace_chat_admin: vagrant }
 

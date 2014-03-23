@@ -6,8 +6,9 @@ node_modules
 
 .DS_Store
 .tm_properties
-_meatspace-chat.env.j2
 hosts
+hosts_robospace
 npm-debug.log
 site.yml
+site_robospace.yml
 

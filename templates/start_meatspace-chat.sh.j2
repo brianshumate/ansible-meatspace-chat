@@ -5,7 +5,7 @@
 
 cd {{ meatspace_chat_dir }}
 
-. /home/{{ meatspace_chat_admin }}/.nvm/nvm.sh
+. {{ meatspace_chat_nvm_dir }}/nvm.sh
 nvm use {{ meatspace_chat_node_version }}
 
 npm start
