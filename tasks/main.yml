@@ -15,7 +15,7 @@
     - system_packages
 
 - name: Download ØMQ
-  get_url: "url=http://download.zeromq.org/{{ meatspace_chat_zeromq_pkg }} dest=/tmp/ creates=/tmp/{{ meatspace_chat_zeromq_pkg }}"
+  get_url: "url=http://download.zeromq.org/{{ meatspace_chat_zeromq_pkg }} dest=/tmp/"
   tags: zeromq
 
 - name: Prepare ØMQ
