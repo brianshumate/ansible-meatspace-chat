@@ -112,7 +112,7 @@
 
 - name: Start Meatspace Chat
   sudo: True
-  service: name=meatspace-chat state=started
+  service: name=meatspace-chat state=restarted
   tags:
     - meatspace_chat_service
 
