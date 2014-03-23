@@ -80,7 +80,7 @@
 
 - name: Install Bower packages
   sudo: False
-  comannd: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && bower install chdir={{ meatspace_chat_dir }} executable=/bin/bash"
+  command: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && bower install chdir={{ meatspace_chat_dir }} executable=/bin/bash"
   tags:
     - node_packages
 
