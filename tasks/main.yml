@@ -68,13 +68,13 @@
 
 - name: Install Bower
   sudo: False
-  command: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && npm install -g bower chdir={{ meatspace_chat_dir }} executable=/bin/bash"
+  command: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && npm install -g bower executable=/bin/bash"
   tags:
     - node_packages
 
 - name: Install Nodemon
   sudo: False
-  command: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && npm install -g nodemon chdir={{ meatspace_chat_dir }} executable=/bin/bash"
+  command: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && npm install -g nodemon executable=/bin/bash"
   tags:
     - node_packages
 
