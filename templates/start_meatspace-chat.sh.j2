@@ -11,5 +11,5 @@ cd {{ meatspace_chat_dir }}
 . {{ meatspace_chat_nvm_dir }}/nvm.sh
 nvm use {{ meatspace_chat_node_version }}
 
-npm start
+exec sudo -u {{ meatspace_chat_admin }} npm start
 
