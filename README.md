@@ -66,9 +66,9 @@ and so much more.
 The Meatspace Chat role requires a Debian based Linux host and is tested to
 function on Ubuntu with the following specific software versions:
 
-* Ansible: 1.5.3
+* Ansible: 1.7
 * Meatspace Chat: GitHub Master
-* Node.js: 0.10.26
+* Node.js: 0.10.30
 * Ubuntu: 13.10, 13.04, 12.10, 12.04
 
 ## Role Variables
@@ -106,9 +106,6 @@ The following OS dependency packages are defined in
 * redis-server
 * uuid-dev
 * uuid
-* zsh
-
-Most of these packages are required with the exception of `curl` and `zsh`.
 
 ### Variables
 
@@ -136,18 +133,24 @@ Meatspace Chat host. Be sure to change the following values:
 
 ## Example Playbook
 
-After configuration a basic Meatspace Chat installation and activation is possible
-using the included `site.yml` playbook. You should copy `site.yml.example`
-to `site.yml`, edit it and modify the `meatspace_chat_twitter_key` and
-`meatspace_chat_twitter_secret` variables passed to the role.
+After configuration a basic Meatspace Chat installation and activation is
+possible using the included `examples/site.yml` playbook.
+
+Copy `examples/site.yml.example` to `examples/site.yml`, edit it, and modify
+the `meatspace_chat_twitter_key` and `meatspace_chat_twitter_secret`
+variables, which will be passed to the role at runtime.
+
+Alternatively, you can specify the variables with the ` --extra-vars` option
+to `ansible-playbook`. See the
+[Ansible documentation](http://docs.ansible.com/playbooks_variables.html) for
+more details on using variables.
 
 ```
 ansible-playbook -i hosts site.yml
 ```
 
 **NOTE**: Do not commit `site.yml` to Github after adding Twitter credentials;
-the included `.gitignore` will ignore it.
-
+the included `.gitignore` will ignore it by default.
 
 ## Development Vagrant Instance
 

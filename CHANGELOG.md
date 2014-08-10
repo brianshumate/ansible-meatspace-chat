@@ -8,3 +8,8 @@
 
 - Clean up main tasks
 - Ensure Redis service is started
+
+#v1.0.2
+
+- Vagrant specific updates
+- Documentation updates

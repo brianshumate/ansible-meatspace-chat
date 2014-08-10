@@ -47,7 +47,7 @@
 
 - name: Install NVM
   sudo: False
-  git: "repo=https://{{ meatspace_chat_nvm_repo }} dest={{ meatspace_chat_nvm_dir }}"
+  git: "repo=https://{{ meatspace_chat_nvm_repo }} dest={{ meatspace_chat_nvm_dir }} accept_hostkey=True"
   tags:
     - node_packages
 
@@ -59,16 +59,16 @@
 
 - name: Clone Meatspace Chat
   sudo: False
-  git: "repo=git://{{ meatspace_chat_repo }} dest={{ meatspace_chat_dir }}"
+  git: "repo=git://{{ meatspace_chat_repo }} dest={{ meatspace_chat_dir }} accept_hostkey=True"
 
-- name: Install global Node packages
+- name: Global Node packages
   sudo: False
   npm: "name={{ item }} path={{ meatspace_chat_dir }} executable={{ meatspace_chat_nvm_dir }}/v{{ meatspace_chat_node_version }}/bin/npm state=present"
   with_items: meatspace_chat_global_node_packages
   tags:
     - node_packages
 
-- name: Install local Node packages
+- name: Local Node packages
   sudo: False
   npm: "path={{ meatspace_chat_dir }} executable={{ meatspace_chat_nvm_dir }}/v{{ meatspace_chat_node_version }}/bin/npm state=present"
   tags:

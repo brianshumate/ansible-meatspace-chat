@@ -69,11 +69,11 @@ with an Ubuntu virtual machine on VirtualBox and provisioned by Vagrant.
 This Meatspace Chat role requires a Debian based Linux host and has been
 tested to function on Ubuntu with the following specific software versions:
 
-* Ansible: 1.5.3
-* VirtualBox: 4.3.8
-* Vagrant: 1.5.0
+* Ansible: 1.7
+* VirtualBox: 4.3.14
+* Vagrant: 1.6.3
 * Meatspace Chat: GitHub Master
-* Node.js: 0.10.26
+* Node.js: 0.10.30
 * Ubuntu: 13.10, 13.04, 12.10, 12.04
 
 Install the following on the Mac that will be used for Meatspace Chat
