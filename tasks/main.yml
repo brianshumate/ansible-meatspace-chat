@@ -28,6 +28,7 @@
   tags:
     - zeromq
 
+# TODO: revisit this
 #- name: Build ØMQ
 #  command: "make chdir=/tmp/{{ meatspace_chat_zeromq }}"
 #  tags:
@@ -79,12 +80,6 @@
   tags:
     - node_packages
 
-#- name: Install Nodemon
-#  sudo: False
-#  shell: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && npm install -g nodemon executable=/bin/bash"
-#  tags:
-#    - node_packages
-
 - name: Install Bower packages
   sudo: False
   shell: ". {{ meatspace_chat_nvm_dir }}/nvm.sh && nvm use {{ meatspace_chat_node_version }} && bower install chdir={{ meatspace_chat_dir }} executable=/bin/bash"
@@ -116,6 +111,12 @@
 - name: Create upstart script
   sudo: True
   template: "src=start_meatspace-chat.sh.j2 dest={{ meatspace_chat_dir }}/start_meatspace-chat.sh mode=0755"
+
+- name: Start Redis
+  sudo: True
+  service: name=redis-server state=started
+  tags:
+    - meatspace_chat_service
 
 - name: Start Meatspace Chat
   sudo: True
