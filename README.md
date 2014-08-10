@@ -58,7 +58,8 @@ MEATSPACECHATMEATSPACECHATMMMMMMMMMMM+++MEATSPACECHATMEATSPACECHATMEATSPACECHATM
 
 This is an [Ansible](http://www.ansible.com/) role for
 [Meatspace Chat](https://github.com/meatspaces/meatspace_chat), the fantastic
-web chat with animated .GIF goodness and so much more.
+web chat with an amazing community of wonderful meats, animated .GIF goodness,
+and so much more.
 
 ## Requirements
 

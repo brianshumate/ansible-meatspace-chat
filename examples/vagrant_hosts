@@ -3,4 +3,3 @@
 
 [meatspace_chat]
 10.1.1.40 meatspace_chat_admin=vagrant ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
-

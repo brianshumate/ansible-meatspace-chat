@@ -25,7 +25,7 @@ meatspace_chat_twitter_key: "FIXME"
 
 meatspace_chat_twitter_secret: "FIXME"
 
-meatspace_chat_node_version: "0.10.26"
+meatspace_chat_node_version: "0.10.30"
 
 meatspace_chat_repo: "github.com/meatspaces/meatspace-chat.git"
 
@@ -43,8 +43,6 @@ meatspace_chat_os_packages:
   - redis-server
   - uuid-dev
   - uuid
-  - zsh
 
 meatspace_chat_zeromq: "zeromq-4.0.4"
 meatspace_chat_zeromq_pkg: "zeromq-4.0.4.tar.gz"
-

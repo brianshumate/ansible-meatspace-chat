@@ -9,4 +9,3 @@
 
 - name: stop meatspace_chat
   service: name=meatspace-chat state=stopped
-
