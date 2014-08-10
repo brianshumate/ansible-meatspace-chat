@@ -13,3 +13,7 @@
 
 - Vagrant specific updates
 - Documentation updates
+
+# v1.0.3
+
+- Minor documentation clarification

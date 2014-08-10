@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Brian Shumate
-  description: "Meatspace Chat is a wondrously meaty web chat community"
+  description: "Meatspace Chat is a wondrously meaty web chat community; this role can deploy your own instance of the Meatspace Chat server"
   company:
   license: Apache 2
   min_ansible_version: 1.4

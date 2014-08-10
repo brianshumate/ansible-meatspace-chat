@@ -61,6 +61,9 @@ This is an [Ansible](http://www.ansible.com/) role for
 web chat with an amazing community of wonderful meats, animated .GIF goodness,
 and so much more.
 
+Use this role to deploy your very own instance of the open source
+Meatspace Chat.
+
 ## Requirements
 
 The Meatspace Chat role requires a Debian based Linux host and is tested to
