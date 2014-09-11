@@ -59,10 +59,10 @@ MEATSPACECHATMEATSPACECHATMMMMMMMMMMM+++MEATSPACECHATMEATSPACECHATMEATSPACECHATM
 This is an [Ansible](http://www.ansible.com/) role for
 [Meatspace Chat](https://github.com/meatspaces/meatspace_chat), the fantastic
 web chat with an amazing community of wonderful meats, animated .GIF goodness,
-and so much more.
+side splitting improv, and so much more.
 
 Use this role to deploy your very own instance of the open source
-Meatspace Chat.
+Meatspace Chat application.
 
 ## Requirements
 
@@ -71,7 +71,7 @@ function on Ubuntu with the following specific software versions:
 
 * Ansible: 1.7
 * Meatspace Chat: GitHub Master
-* Node.js: 0.10.30
+* Node.js: 0.10.31
 * Ubuntu: 13.10, 13.04, 12.10, 12.04
 
 ## Role Variables
@@ -157,7 +157,7 @@ the included `.gitignore` will ignore it by default.
 
 ## Development Vagrant Instance
 
-See the [[README_VAGRANT.md]] for instructions on using this role with
+See the [README_VAGRANT.md](https://github.com/brianshumate/ansible-meatspace-chat/blob/master/README_VAGRANT.md) for instructions on using this role with
 Mac OS X and Vagrant. If you have Ansible, VirtualBox, and Vagrant already
 installed, try changing into the `/etc/ansible/ansible-meatspace-chat` role
 directory and executing:

@@ -17,3 +17,8 @@
 # v1.0.3
 
 - Minor documentation clarification
+
+# v1.0.4
+
+- Updated Node.js version
+- Documentation enhancements
