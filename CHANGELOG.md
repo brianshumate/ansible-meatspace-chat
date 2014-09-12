@@ -22,3 +22,7 @@
 
 - Updated Node.js version
 - Documentation enhancements
+
+# v1.0.4
+
+- Updated tested software versions
