@@ -56,6 +56,9 @@ MEATSPACECHATMEATSPACECHATMMMMMMMMMMM+++MEATSPACECHATMEATSPACECHATMEATSPACECHATM
 
 ```
 
+**NOTE: This is for the VERSION 1 Meatspace Chat which is superseded by
+[Meatspace Chat version 2](https://galaxy.ansible.com/list#/roles/2486).**
+
 This is an [Ansible](http://www.ansible.com/) role for
 [Meatspace Chat](https://github.com/meatspaces/meatspace_chat), the fantastic
 web chat with an amazing community of wonderful meats, animated .GIF goodness,
